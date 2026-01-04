@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Uploads (don't commit user files)
+uploads/
+
+# Build / dist folders (if any)
+dist/
+build/
+
+# Docker files (optional, you can keep them in repo)

@@ -1,0 +1,34 @@
+file-server/
+├── docker/
+│   ├── nginx/
+│   │   └── default.conf
+│   └── Dockerfile
+├── uploads/                  # mounted volume
+│   ├── images/
+│   ├── documents/
+│   └── chunks/
+├── src/
+│   ├── app.js
+│   ├── server.js
+│   ├── config/
+│   │   ├── db.js
+│   │   ├── multer.js
+│   │   └── jwt.js
+│   ├── models/
+│   │   ├── File.js
+│   │   └── ApiKey.js
+│   ├── middlewares/
+│   │   ├── apiKey.middleware.js
+│   │   ├── jwt.middleware.js
+│   │   ├── role.middleware.js
+│   │   └── error.middleware.js
+│   ├── routes/
+│   │   └── file.routes.js
+│   ├── controllers/
+│   │   └── file.controller.js
+│   └── utils/
+│       ├── chunk.util.js
+│       └── file.util.js
+├── docker-compose.yml
+├── .env
+└── package.json
