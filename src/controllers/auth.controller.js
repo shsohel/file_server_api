@@ -122,6 +122,8 @@ exports.login = asyncHandler(async (req, res, next) => {
   #swagger.responses[400] = { description: 'Invalid credentials', schema: { $ref: '#/definitions/ErrorResponse' } }
   #swagger.security = [] // public
 */
+
+console.log(req.body)
   const { email, password } = req.body;
 
   if (!email || !password) {
