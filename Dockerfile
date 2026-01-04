@@ -29,7 +29,7 @@ WORKDIR /usr/src/app
 COPY --from=build /usr/src/app ./
 
 # Expose port
-EXPOSE 5000
+EXPOSE 5050
 
 # Default command
 CMD ["node", "src/server.js"]
