@@ -18,11 +18,11 @@ const fileFilter = (req, file, cb) => {
   }
   cb(null, true);
 };
-
+const GB = 1024 * 1024 * 1024;
 module.exports = multer({
   storage,
   fileFilter,
   limits: {
-    fileSize: 4024 * 1024 * 1024, // 1GB ZIP //4GB
+    fileSize: 4 * GB, // 4GB
   },
 });
