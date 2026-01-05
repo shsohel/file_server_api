@@ -205,7 +205,10 @@ exports.download = async (req, res, next) => {
      * Send File
      * ============================
      */
-    res.download(file.path, file.originalName || path.basename(file.path));
+    // console.log(file.path);
+    // console.log(file.filename);
+    // console.log(path.basename(file.path));
+    res.download(file.path, file.filename || path.basename(file.path));
   } catch (err) {
     next(err);
   }
@@ -324,7 +327,7 @@ exports.bulkDownload = async (req, res, next) => {
     for (const file of files) {
       if (fs.existsSync(file.path)) {
         archive.file(file.path, {
-          name: file.originalName || file.filename,
+          name: file.filename || file.originalName,
         });
       }
     }
