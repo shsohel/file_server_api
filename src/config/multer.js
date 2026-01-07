@@ -66,9 +66,11 @@ const fileFilter = (req, file, cb) => {
     // Images
     // =====================
     "image/png",
+    "image/gif",
     "image/jpeg",
     "image/jpg",
     "image/webp",
+    "image/avif",
 
     // =====================
     // PDF
@@ -108,6 +110,8 @@ const fileFilter = (req, file, cb) => {
     ".png",
     ".jpg",
     ".jpeg",
+    ".avif",
+    ".gif",
     ".webp",
     ".pdf",
     ".doc",
@@ -119,6 +123,7 @@ const fileFilter = (req, file, cb) => {
     ".avi",
     ".mov",
     ".webm",
+
   ];
 
   const ext = path.extname(file.originalname).toLowerCase();
@@ -127,9 +132,9 @@ const fileFilter = (req, file, cb) => {
     return cb(new Error(`File type not allowed: ${file.mimetype}`), false);
   }
 
-  if (!allowedExtensions.includes(ext)) {
-    return cb(new Error("File extension not allowed"), false);
-  }
+  // if (!allowedExtensions.includes(ext)) {
+  //   return cb(new Error(`File extension not allowed : ${file.ext}`), false);
+  // }
 
   cb(null, true);
 };
