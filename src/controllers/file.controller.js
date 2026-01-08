@@ -792,7 +792,7 @@ exports.listFiles = async (req, res, next) => {
     //   console.log("✅ File indexes synced");
     // })();
     const pageNum = Math.max(1, parseIntParam(page, 1));
-    const perPage = Math.min(200, Math.max(1, parseIntParam(limit, 20)));
+    const perPage = Math.min(500, Math.max(1, parseIntParam(limit, 20)));
     const skip = (pageNum - 1) * perPage;
 
     // Build filters
