@@ -1,11 +1,18 @@
 const sharp = require("sharp");
 const path = require("path");
 const fs = require("fs/promises");
-
+const allowed = [
+  "image/",
+  "application/octet-stream"
+];
 const compressKeepOriginalName = async (req, res, next) => {
   try {
+    console.log({ mimetype: req.file.mimetype })
+    console.log({ mimetype: req.file.mimetype })
     if (!req.file) return next();
-    if (!req.file.mimetype.startsWith("image/")) return next();
+    if (!allowed.some(type => req.file.mimetype.startsWith(type))) {
+      return next();
+    }
 
     const inputPath = req.file.path;
 
